@@ -1,4 +1,7 @@
 ﻿using Amazon.DynamoDBv2.DataModel;
+using Compartilhado.Model.Enums;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 
@@ -13,9 +16,10 @@ namespace Model
         public List<Produto> Produtos { get; set; }
         public Cliente Cliente { get; set; }
         public Pagamento Pagamento { get; set; }
-        public string Justificativa { get; set; }
-        public string Status { get; set; }
-        public bool Pago { get; set; }
-        public bool Faturado { get; set; }
+        public string JustificativaDeCancelamento { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
+        public StatusDoPedido Status { get; set; }
+        public bool Cancelado { get; set; }
     }
 }
