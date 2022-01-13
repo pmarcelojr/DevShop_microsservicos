@@ -7,6 +7,7 @@ namespace Compartilhado.Model.Enums
     public enum StatusDoPedido
     {
         Coletado,
+        Reservado,
         Pago,
         Faturado
     }
